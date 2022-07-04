@@ -1,21 +1,56 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
-}
-
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
-}
-
-main > h1 {
-  text-align: center;
-  font-size: 3.5em;
-}
+body{
+    overflow: hidden;
+  }
+  
+  h1{
+    text-align: center;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 800;
+    font-size: 10rem;
+    overflow-wrap: break-word;
+    line-height: 7rem;
+    margin: inherit;
+  }
+  
+  p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .header{
+    width: 80vw;
+    margin: 30vh auto 5vh auto;
+    color: #282828;
+  }
+  
+  .foreHeader{
+    display: none;
+  }
+  
+  .nameHeader{
+    display: none;
+  }
+  
+  .copy{
+    width: 60vw;
+    margin: auto;
+  }
+  
+  .defaultCopy{
+    display: none;
+  }
+  
+  .playerCopy{
+    display: none;
+  }
+  
+  .inputs{
+    margin-top: 5vh;
+    text-align: center;
+  }
+  
+  .nameInputForm{
+    display: none;
+  }
