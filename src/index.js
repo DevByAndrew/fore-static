@@ -15,7 +15,15 @@ $('#foreBtn').click(function(){
     let tempName = document.getElementById("nameInput").value.toLowerCase()
 
     if (tempName.length == 0) alert('Please enter a player name.')
-    else playerName = tempName
-    console.log(playerName)
+    else{ 
+        playerName = tempName
+        console.log(playerName)
+
+        let btnClicked = this;
     
+        btnClicked.disabled = true;
+        setTimeout(function() {
+            btnClicked.disabled = false;
+        }, 2000)
+    }
 })
