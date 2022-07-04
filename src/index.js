@@ -1,37 +1,4 @@
-//Establish Mongoose
-const mongoose = require('mongoose');
 
-mongoose.connect(
-    process.env.CONNECTION_STRING,
-    {
-        userNewUrlParser: true,
-        useUnifiedTopology: true,
-    }
-)
-
-//Create Player schema
-const playerSchema = new mongoose.Schema({
-    playerName: String,
-    playerScores: Array
-})
-
-const Player = mongoose.model('player', playerSchema)
-
-const defaultPlayer = new Player({
-    playerName: "Andrew",
-    playerScores: [100,100,100,100]
-})
-
-Player.find({}, function(err, foundPlayers){
-    if(foundPlayers.length === 0){
-        Player.insertOne(defaultPlayer, function(err){
-            if (err) console.log(err)
-            else{
-                console.log('Default Player entered')
-            }
-        })
-    }
-})
 
 //Fade in main content
 $('.foreHeader').fadeIn(1200)
