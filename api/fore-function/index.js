@@ -2,7 +2,7 @@ module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
     const name = (req.query.name || (req.body && req.body.name));
-    const scores = (req.query.scores || (req.body && req.body.scores));
+    const scores = JSON.parse(req.query.scores || (req.body && req.body.scores));
 
     console.log(scores)
     //Our functions use pop and shift. Since we don't want to do that to our scores array, we use slice to create a temporary copy of the scores array.

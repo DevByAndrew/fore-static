@@ -22,8 +22,16 @@ $('#foreBtn').click(function(){
         let btnClicked = this;
     
         btnClicked.disabled = true;
+
+        $.get('api/fore-function?name=andrew&scores=[0,0,100,100]');
+
+        // $.get('http://localhost:7071/api/fore-function?name=andrew&scores=[0,0,100,100]');
+
+
         setTimeout(function() {
             btnClicked.disabled = false;
         }, 2000)
     }
 })
+
+// {"name":"Andrew", "scores":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 80]}
