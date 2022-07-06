@@ -45,6 +45,10 @@ body{
   .playerCopy{
     display: none;
   }
+
+  .resultsCopy{
+    display: none;
+  }
   
   .inputs{
     margin-top: 5vh;
@@ -52,5 +56,18 @@ body{
   }
   
   .nameInputForm{
+    display: none;
+  }
+
+  .scoreInputForm{
+    display: none;
+  }
+
+  .submitStats{
+    display: none;
+    margin-top: 3vh;
+  }
+
+  .return{
     display: none;
   }

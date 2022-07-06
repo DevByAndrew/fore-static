@@ -24,7 +24,7 @@
       <h1>Fooore...!</h1>
     </div>
     <div class="nameHeader">
-      <h1 class="nameH1">Temp</h1>
+      <h1 class="nameH1">Error</h1>
     </div>
   </div>
 
@@ -34,18 +34,33 @@
       <p>Keep track of a player's golf scores, show their average score, and calculate their handicap. Enter a name below to look up an existing player or start tracking a new one.</p>
     </div>
     <div class="playerCopy">
-      <p class="playerP">Temp</p>
+      <p class="playerP">Hmm, something's not right. Please refresh the page and try again.</p>
+      <p class="scoreP"></p>
+    </div>
+    <div class="resultsCopy">
+      <p class="resultsP">Hmm, something's not right. Please refresh the page and try again.</p>
     </div>
   </div>
 
   <!-- Input Forms / Buttons -->
   <div class="inputs">
-    <form action="..../api/fore-function/index.js" method="post">
-      <div class="nameInputForm">
-        <input type="text" id="nameInput" name="playerName" placeholder="Enter Player Name Here">
-        <button id="foreBtn" type="submit">Fore!</button>
-      </div>
-    </form>
+    <div class="nameInputForm">
+      <input type="text" id="nameInput" name="playerName" placeholder="Enter Player Name Here" required>
+      <button id="foreBtn" type="submit">Fore!</button>
+    </div>
+    <div class="scoreInputForm">
+      <input type="number" id="scoreInput" name="playerScore" placeholder="Enter a score here." required>
+      <button id="scoreBtn" type="submit">Add Score</button>
+    </div>
+    <div class="submitStats">
+      <button id="submitBtn">Fore!</button>
+    </div>
+    <div class="return">
+      <a href="/">
+        <button id="returnBtn">Return To Home</button>
+      </a>
+    </div>
+
   </div>
 
   <script src="index.js" charset="utf-8"></script>
