@@ -15,25 +15,29 @@ let playerScores = []
 let scoreCopy = "When you enter scores for this player, they'll show here."
 let resultsCopy
 
+//Set a regEx that will check for alpha numeric entries
+let alphaNumRegEx = /^[A-Z0-9 ]*$/i
+
 //Get player name from the html
 $('#foreBtn').click(function(){
     let tempName = document.getElementById("nameInput").value.toLowerCase()
+    if (tempName.length == 0) return alert('Please enter a player name.')
+    if (!tempName.match(alphaNumRegEx)) return alert('Please enter a name only containing letters, numbers, and/or spaces. Thanks!')
+     
+    playerName = tempName
+    playerName = playerName.toTitleCase()
+    console.log(playerName)
 
-    if (tempName.length == 0) alert('Please enter a player name.')
-    else{ 
-        playerName = tempName
-        playerName = playerName.toTitleCase()
-        console.log(playerName)
-
-        let btnClicked = this;
+    let btnClicked = this;
     
-        btnClicked.disabled = true;
+    btnClicked.disabled = true;
 
-        choosePlayer()
+    choosePlayer()
 
-    }
+    
 })
 
+//When score button is pressed retrieve entry from input and add it to the scores array. Only take in whole numbers between 0 and 999
 $('#scoreBtn').click(function(){
     let scoreToAdd = document.getElementById('scoreInput').value
     console.log(scoreToAdd)
