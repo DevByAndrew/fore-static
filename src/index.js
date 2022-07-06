@@ -13,6 +13,7 @@ let playerName
 let playerCopy = 'Enter some scores for this player. Then use the Fore button to calculate their stats.'
 let playerScores = []
 let scoreCopy = "When you enter scores for this player, they'll show here."
+let resultsCopy
 
 //Get player name from the html
 $('#foreBtn').click(function(){
@@ -51,16 +52,22 @@ $('#submitBtn').click(function(){
     $('.scoreInputForm').fadeOut(600)
     $('.submitStats').fadeOut(600)
     
-    $.get('api/fore-function?name=andrew&scores=[0,0,100,100]').done(function(req){
-        console.log(req)
-        console.log(typeof req)
-    })
+    callForeFunction()
 
     setTimeout(function(){
         $('.resultsCopy').fadeIn(1200)
         $('.return').fadeIn(1200)
     }, 600)
 })
+
+//Call functionless server. Await a response
+async function callForeFunction() {
+    $.get('api/fore-function?name=andrew&scores=[0,0,100,100]').done(function(req){
+        console.log(req)
+        resultsCopy = await req
+        $('.resultsP').text(resultsCopy)
+    });
+}
 
 //Change to the player screen
 function choosePlayer(){
@@ -82,6 +89,7 @@ function choosePlayer(){
     }, 600)
 }
 
+//Normalizes capitalization
 String.prototype.toTitleCase = function(){
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
