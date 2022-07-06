@@ -11,6 +11,19 @@ body{
     line-height: 7rem;
     margin: inherit;
   }
+
+  @media screen and (max-width: 1000px) {    
+    h1{
+      font-size: 7.5rem;
+    }
+  }
+
+
+  @media screen and (max-width: 700px) {    
+    h1{
+      font-size: 4rem;
+    }
+  }
   
   p{
     font-family: 'Roboto', sans-serif;
