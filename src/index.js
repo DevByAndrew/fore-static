@@ -38,8 +38,8 @@ $('#scoreBtn').click(function(){
     let scoreToAdd = document.getElementById('scoreInput').value
     console.log(scoreToAdd)
     scoreToAdd = Math.round(scoreToAdd)
-    if (!scoreToAdd) return
-    if (scoreToAdd <= 0 || scoreToAdd >= 999) alert('Please enter a score between 0 and 999')
+    if (scoreToAdd == null) return
+    if (scoreToAdd < 0 || scoreToAdd >= 999) alert('Please enter a score between 0 and 999')
     else {
         playerScores.push(scoreToAdd)
         $('.scoreP').text(playerName + ' has the followering scores: ' + playerScores)
@@ -49,6 +49,8 @@ $('#scoreBtn').click(function(){
 
 //Transition to results page.
 $('#submitBtn').click(function(){
+    if(playerScores.length == 0) return alert('No scores for ' + playerName + ' found. Please enter some and try again.')
+
     $('.playerCopy').fadeOut(600)
     $('.scoreInputForm').fadeOut(600)
     $('.submitStats').fadeOut(600)
