@@ -61,10 +61,10 @@ $('#submitBtn').click(function(){
 })
 
 //Call functionless server. Await a response
-async function callForeFunction() {
+function callForeFunction() {
     $.get('api/fore-function?name=andrew&scores=[0,0,100,100]').done(function(req){
         console.log(req)
-        resultsCopy = await req
+        resultsCopy = req
         $('.resultsP').text(resultsCopy)
     });
 }
