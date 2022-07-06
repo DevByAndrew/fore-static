@@ -47,6 +47,7 @@ $('#scoreBtn').click(function(){
     }
 })
 
+//Transition to results page.
 $('#submitBtn').click(function(){
     $('.playerCopy').fadeOut(600)
     $('.scoreInputForm').fadeOut(600)
@@ -62,7 +63,7 @@ $('#submitBtn').click(function(){
 
 //Call functionless server. Await a response
 function callForeFunction() {
-    $.get('api/fore-function?name=andrew&scores=[0,0,100,100]').done(function(req){
+    $.get('api/fore-function?name=' + playerName + '&scores=' + playerScores).done(function(req){
         console.log(req)
         resultsCopy = req
         $('.resultsP').text(resultsCopy)
@@ -94,9 +95,3 @@ String.prototype.toTitleCase = function(){
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
 
-
-// Code to hit the api
-// $.get('api/fore-function?name=andrew&scores=[0,0,100,100]').done(function(req){
-//     console.log(req)
-//     console.log(typeof req)
-// });
