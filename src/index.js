@@ -39,7 +39,7 @@ $('#scoreBtn').click(function(){
     console.log(scoreToAdd)
     scoreToAdd = Math.round(scoreToAdd)
     if (!scoreToAdd) return
-    if (scoreToAdd < 0 || scoreToAdd > 999) alert('Please enter a score between 0 and 999')
+    if (scoreToAdd <= 0 || scoreToAdd >= 999) alert('Please enter a score between 0 and 999')
     else {
         playerScores.push(scoreToAdd)
         $('.scoreP').text(playerName + ' has the followering scores: ' + playerScores)
@@ -63,7 +63,7 @@ $('#submitBtn').click(function(){
 
 //Call functionless server. Await a response
 function callForeFunction() {
-    $.get('api/fore-function?name=' + playerName + '&scores=' + playerScores).done(function(req){
+    $.get('api/fore-function?name=' + playerName + '&scores=[' + playerScores + ']').done(function(req){
         console.log(req)
         resultsCopy = req
         $('.resultsP').text(resultsCopy)
